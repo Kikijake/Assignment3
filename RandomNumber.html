@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number</title>
+    <style>
+        body {background-color: #737ca1;}
+        Form {text-align: center;}
+        #buttonform {text-align: center;}
+        #label {background-color: purple;color: white;
+            margin-left: 25%;margin-right: 25%;}
+        input{background-color: green;}
+        .number {color: aqua;}
+        #randomdigitappearbox {background-color: green;
+            margin-left: 35%;margin-right: 35%;color: aqua;}
+    </style>
+</head>
+<body>
+    <Form>
+        <div id="label">
+            <label for="RandomDigit">
+                Select how many random digits you want to get.
+            </label>
+         </div>
+        <br>
+        <input 
+            class="number"
+            type="number"
+            name="RandomDigit" 
+            id="randomNumber" 
+            min="1" 
+            max="10"
+            >
+        <p id="randomdigitappearbox">Your RandomDigits will be appeared here</p>
+    </Form>
+    <p id="buttonform"><button onclick="buttonAction()">Click Here To Get Your Number</button></p>
+    <script>
+        
+        var button = document.querySelector('input[type="number"]');
+        var paragraph = document.querySelector('p');
+        
+        function buttonAction(){
+            
+            var b= button.value
+            const a=10;
+            var c = (a**b)
+            paragraph.textContent=Math.floor(Math.random()*c)+1
+        
+        }
+    </script>
+</body>
+</html>
